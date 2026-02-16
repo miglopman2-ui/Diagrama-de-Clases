@@ -1,22 +1,18 @@
 
 ```mermaid
 classDiagram
+    direction LR
+    Main ..> Producto
+    Main ..> CalculadoraIVA
+
     class Producto {
-        -String nombre
-        -double precioBase
-        +Producto(String nombre, double precioBase)
-        +getPrecioBase() double
+        -nombre
+        -precioBase
+        +getPrecioBase()
     }
 
     class CalculadoraIVA {
-        -double IVA
-        +calcularPrecioFinal(double precio) double
+        -IVA
+        +calcularPrecioFinal()
     }
-
-    class Main {
-        +main(String[] args)
-    }
-
-    Main ..> Producto : "instancia"
-    Main ..> CalculadoraIVA : "usa"
 ```
