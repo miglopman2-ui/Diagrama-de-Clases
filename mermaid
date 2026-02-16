@@ -1,4 +1,22 @@
-Clase,Atributos (Privados -),Métodos (Públicos +)
-Producto,nombre: String  precioBase: double,"Producto(String, double)  getPrecioBase(): double"
-CalculadoraIVA,IVA: double (final),calcularPrecioFinal(double): double
-Main,N/A,main(String[] args)
+
+```mermaid
+classDiagram
+    class Producto {
+        -String nombre
+        -double precioBase
+        +Producto(String nombre, double precioBase)
+        +getPrecioBase() double
+    }
+
+    class CalculadoraIVA {
+        -double IVA
+        +calcularPrecioFinal(double precio) double
+    }
+
+    class Main {
+        +main(String[] args)
+    }
+
+    Main ..> Producto : "instancia"
+    Main ..> CalculadoraIVA : "usa"
+```
